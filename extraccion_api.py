@@ -11,7 +11,7 @@ def lambda_handler(event, context):
 	"longitude": -100.31847,
 	"start_date": "2020-01-01",
 	"end_date": "2024-12-31",
-	"daily": ["temperature_2m_max", "temperature_2m_min", "temperature_2m_mean", "rain_sum", "wind_speed_10m_max", "shortwave_radiation_sum"],
+	"daily": ["temperature_2m_max", "temperature_2m_min", "temperature_2m_mean", "rain_sum", "precipitation_hours", "wind_speed_10m_max", "shortwave_radiation_sum"],
 	"timezone": "America/Chicago"
     }
     responses = openmeteo.weather_api(url, params=params)
