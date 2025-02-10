@@ -8,7 +8,7 @@ El propósito de este proyecto fue obtener y analizar datos meteorológicos util
 
 ### 1️⃣ Obtención de Datos
 
-- Utilicé la API de Open-Meteor para extraer información meteorológica diaria. Los parámetros clave obtenidos fueron:
+- Utilicé la API de Open-Meteor para extraer información meteorológica diaria. Los parámetros a solicitar fueron:
   - Temperatura máxima (`temperature_2m_max`)
   - Temperatura mínima (`temperature_2m_min`)
   - Temperatura media (`temperature_2m_mean`)
@@ -17,23 +17,22 @@ El propósito de este proyecto fue obtener y analizar datos meteorológicos util
   - Velocidad máxima del viento a 10m (`wind_speed_10m_max`)
   - Radiación solar acumulada (`shortwave_radiation_sum`)
 
-- **Rango de Fechas**: 01 de Enero de 2020 a 31 de diciembre de 2024
+- **Rango de Fechas**: `01 de Enero de 2020 a 31 de diciembre de 2024`
 
 - **Validación de Datos**:
   - Realicé una revision para detectar campos duplicados.
   - Verifiqué que no hubiera valores nulos.
-
 ---
 
 ### 2️⃣ Proceso ETL en AWS
 
-Implementé un flujo de datos en AWS para procesar y almacenar los datos. A continuación, describo los pasos que seguí:
+Creé un flujo de datos en AWS para procesar y almacenar los datos. A continuación, describo los pasos que seguí:
 
 - **Extracción de Datos con AWS Lambda**:
   - Utilicé **AWS Lambda** para conectarme a la API de Open-Meteor y extraer los datos meteorológicos diarios de las fechas establecidas y almacenar los datos crudos en un bucket de **Amazon S3**.
 
 - **Almacenamiento de Datos en Amazon S3**:
-  - Los datos originales obtenidos de la API se almacenaron en un bucket de **Amazon S3**. Este bucket sirvió como almacenamiento para los datos en su estado original y ya procesados.
+  - Los datos originales obtenidos de la API se almacenaron en un bucket de **Amazon S3**. Este bucket sirvió como almacenamiento para los datos originales y los ya procesados.
 
 Bucket en la region us-east-1:
 
@@ -43,13 +42,13 @@ Datos originales:
 
 ![image](https://github.com/user-attachments/assets/095c2823-cc5d-4c1c-83e9-b86e3b8800df)
 
-Datos procesados:
+Datos procesados (Se renombraron al descargarse):
 
 ![image](https://github.com/user-attachments/assets/4013b13e-f415-495d-b44c-17d25361d632)
 
 
 - **Catalogación de Datos con AWS Glue Crawler**:
-  - Usé **AWS Glue Crawler** para escanear los datos crudos almacenados en S3 y generar un esquema estructurado en **AWS Glue Data Catalog**. Esto permitió organizar los datos de manera que pudieran ser consultados fácilmente en futuros análisis.
+  - Usé **AWS Glue Crawler** para escanear los datos originales almacenados en S3 y generar un esquema en **AWS Glue Data Catalog**. Esto permitió organizar los datos de manera que pudieran ser utilizados en el GLUE JOB.
 
 ![image](https://github.com/user-attachments/assets/59662723-52b0-49c8-ad7f-786256d0f787)
 
@@ -82,20 +81,19 @@ Una vez completado el proceso ETL en AWS, realicé el análisis exploratorio y e
   - El modelo permitió identificar patrones y tendencias significativas entre estas variables, proporcionando resultados sobre cómo la radiación solar afecta las temperaturas.
 
 - **Resultados y Visualizaciones**:
-  - Todos los gráficos generados, así como los resultados del modelo de Machine Learning, están disponibles en el notebook del repositorio.
+  - Todos los gráficos generados, así como los resultados del modelo de Machine Learning, están disponibles en el notebook en el repositorio.
 
 ## Resultados
 
 Al realizar el análisis exploratorio en Google Colab , mediante gráficos y la matriz de correlación, pude observar que existe una relación positiva muy fuerte entre las temperaturas (mínima, máxima y promedio) y la radiación solar.
-Para confirmar esta relación, desarrollé un modelo de Machine Learning, el cual quedó en evidencia que las variables de temperatura pueden utilizarse para predecir la radiación solar con una eficiencia del 84% , según las métricas calculadas. Este resultado no solo validó la relación observada en el análisis exploratorio.
+Para confirmar esta relación, desarrollé un modelo de Machine Learning, el cual confirmó que las variables de temperatura pueden utilizarse para predecir la radiación solar con una eficiencia del 84% , según las métricas calculadas. 
 
- 
 ## 📝 Conclusión del proyecto
 
-Este proyecto representó para mi una integración de todo lo aprendido a lo largo de la academia, permitiéndome aplicar conceptos aprendidos y métodos que aprendí. A través del uso de la **API de Open-Meteor**, creé un flujo ETL en **AWS** para extraer, transformar y almacenar datos meteorológicos. Además, realicé en **Google Colab** un análisis exploratorio y desarrollé un modelo de Machine Learning para evaluar la relación entre variables de la temperatura y la radiación solar.
+Este proyecto representó para mi una integración de todo lo aprendido a lo largo de la academia, permitiéndome aplicar conceptos y métodos que aprendí. A través del uso de la **API de Open-Meteor**, creé un flujo ETL en **AWS** para extraer, transformar y almacenar datos meteorológicos. Además, realicé en **Google Colab** un análisis exploratorio y desarrollé un modelo de Machine Learning para evaluar la relación entre variables de la temperatura y la radiación solar.
 
 ### Aprendizajes:
-- Poner en practicar lo aprendido en la academia sobre **AWS** para procesar datos.
+- Poner en practica lo aprendido en la academia sobre **AWS** para procesar datos.
 - Mejoré mis habilidades en la limpieza, validación y transformación de datos.
 - Creé un modelo predictivo para extraer valor de los datos.
 
