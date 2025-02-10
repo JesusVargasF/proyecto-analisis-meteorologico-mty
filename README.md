@@ -83,3 +83,20 @@ Una vez completado el proceso ETL en AWS, realicé el análisis exploratorio y e
 
 - **Resultados y Visualizaciones**:
   - Todos los gráficos generados, así como los resultados del modelo de Machine Learning, están disponibles en el notebook del repositorio.
+
+## Resultados
+
+Al realizar el análisis exploratorio en Google Colab , mediante gráficos y la matriz de correlación, pude observar que existe una relación positiva muy fuerte entre las temperaturas (mínima, máxima y promedio) y la radiación solar.
+Para confirmar esta relación, desarrollé un modelo de Machine Learning, el cual quedó en evidencia que las variables de temperatura pueden utilizarse para predecir la radiación solar con una eficiencia del 84% , según las métricas calculadas. Este resultado no solo validó la relación observada en el análisis exploratorio.
+
+ 
+## 📝 Conclusión del proyecto
+
+Este proyecto representó para mi una integración de todo lo aprendido a lo largo de la academia, permitiéndome aplicar conceptos aprendidos y métodos que aprendí. A través del uso de la **API de Open-Meteor**, creé un flujo ETL en **AWS** para extraer, transformar y almacenar datos meteorológicos. Además, realicé en **Google Colab** un análisis exploratorio y desarrollé un modelo de Machine Learning para evaluar la relación entre variables de la temperatura y la radiación solar.
+
+### Aprendizajes:
+- Poner en practicar lo aprendido en la academia sobre **AWS** para procesar datos.
+- Mejoré mis habilidades en la limpieza, validación y transformación de datos.
+- Creé un modelo predictivo para extraer valor de los datos.
+
+En resumen, este proyecto no solo me permitió consolidar mis conocimientos adquiridos en la academia , sino también identificar áreas de crecimiento para futuros trabajos. Estoy satisfecho con los resultados obtenidos y emocionado por continuar explorando nuevas formas de aprovechar los datos.
