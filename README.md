@@ -63,3 +63,23 @@ Datos procesados:
 Visual ETL Job:
 
 ![image](https://github.com/user-attachments/assets/8f92135f-94fb-4b4c-a353-70efb4d71d3f)
+
+### 3️⃣ Análisis Exploratorio y Modelado en Google Colab
+
+Una vez completado el proceso ETL en AWS, realicé el análisis exploratorio y el desarrollo de un modelo de Machine Learning para evaluar la relación entre las variables climáticas.
+
+- **Descarga de Datos Transformados**:
+  - Descargué los datos transformados desde el bucket de **Amazon S3** y los cargué en **Google Colab** para su análisis.
+
+- **Generación de Gráficos**:
+  - Utilicé **Matplotlib** y **Seaborn** para generar gráficos que ayudaran a comprender las relaciones entre las variables climáticas. Estos gráficos incluyen:
+    - Distribución de temperaturas (baja, alta y moderada).
+    - Relación entre la radiación solar y las temperaturas.
+    - Cambio de la temperatura a través de los años.
+
+- **Desarrollo del Modelo de Machine Learning**:
+  - Creé un modelo para evaluar la relación entre la **temperatura promedio**, **temperatura mínima**, **temperatura máxima** y la **radiación solar**.
+  - El modelo permitió identificar patrones y tendencias significativas entre estas variables, proporcionando resultados sobre cómo la radiación solar afecta las temperaturas.
+
+- **Resultados y Visualizaciones**:
+  - Todos los gráficos generados, así como los resultados del modelo de Machine Learning, están disponibles en el notebook del repositorio.
