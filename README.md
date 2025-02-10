@@ -20,9 +20,6 @@ El propósito de este proyecto fue obtener y analizar datos meteorológicos util
 
 - **Rango de Fechas**: `01 de Enero de 2020 a 31 de diciembre de 2024`
 
-- **Validación de Datos**:
-  - Realicé una revision para detectar campos duplicados.
-  - Verifiqué que no hubiera valores nulos.
 ---
 
 ### 2️⃣ Proceso ETL en AWS
