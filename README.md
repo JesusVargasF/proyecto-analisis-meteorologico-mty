@@ -28,6 +28,8 @@ Creé un flujo de datos en AWS para procesar y almacenar los datos. A continuaci
 
 - **Extracción de Datos con AWS Lambda**:
   - Utilicé **AWS Lambda** para conectarme a la API de Open-Meteor y extraer los datos meteorológicos diarios de las fechas establecidas y almacenar los datos crudos en un bucket de **Amazon S3**.
+>[!NOTE]
+>**El codigo de la funcion Lambda esta dentro del repositorio.**
 
 - **Almacenamiento de Datos en Amazon S3**:
   - Los datos originales obtenidos de la API se almacenaron en un bucket de **Amazon S3**. Este bucket sirvió como almacenamiento para los datos originales y los ya procesados.
@@ -58,6 +60,8 @@ Datos procesados (Se renombraron al descargarse):
     - Agregar un campo `id` único para cada registro.
 
 **Visual ETL Job:**
+>[!NOTE]
+>**El codigo del Glub job esta dentro del repositorio.**
 
 ![image](https://github.com/user-attachments/assets/8f92135f-94fb-4b4c-a353-70efb4d71d3f)
 
@@ -78,10 +82,10 @@ Una vez completado el proceso ETL en AWS, realicé el análisis exploratorio y e
   - Creé un modelo para evaluar la relación entre la **temperatura promedio**, **temperatura mínima**, **temperatura máxima** y la **radiación solar**.
   - El modelo permitió identificar patrones y tendencias significativas entre estas variables, proporcionando resultados sobre cómo la radiación solar afecta las temperaturas.
 
-- **Resultados y Visualizaciones**:
-  - **Todos los gráficos creados, así como los resultados del modelo de Machine Learning, están disponibles en el notebook en el repositorio.**
+>[!NOTE]
+>**Todos los gráficos creados, así como los resultados del modelo de Machine Learning, están disponibles en el notebook en el repositorio.**
     
-    ![image](https://github.com/user-attachments/assets/77e32d8e-3be4-43b7-a81e-d4e0c1dada99)
+  ![image](https://github.com/user-attachments/assets/77e32d8e-3be4-43b7-a81e-d4e0c1dada99)
 
 
 ## Resultados
