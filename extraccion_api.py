@@ -44,12 +44,12 @@ def lambda_handler(event, context):
 
     daily_dataframe = pd.DataFrame(data = daily_data)
 
-    # 📂 Guardar datos en un bucket de S3
+    # Guardar datos en un bucket de S3
     s3 = boto3.client("s3")
     bucket_name = os.environ["S3_BUCKET_NAME"]  # Nombre del bucket en S3
     file_name = "historical_weather.csv"
     
-    # Convertimos el dataframe en un archivo csv, por defecto delimitado por ","
+    # Convertimos el dataframe en un archivo csv"
     csv_buffer = daily_dataframe.to_csv(index=False)
     s3.put_object(Bucket=bucket_name, Key=file_name, Body=csv_buffer)
 
