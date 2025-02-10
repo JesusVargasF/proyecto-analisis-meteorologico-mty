@@ -1,6 +1,7 @@
 import openmeteo_requests
 import pandas as pd
 import boto3
+import json
 import os
 
 def lambda_handler(event, context):
@@ -17,16 +18,15 @@ def lambda_handler(event, context):
     responses = openmeteo.weather_api(url, params=params)
     response = responses[0]
 
-    # Procesamos la respuesta de la API y extraemos cada variable para volverla un arreglo
+    # Procesamos los datos extraidos de la API
     daily = response.Daily()
     daily_temperature_2m_max = daily.Variables(0).ValuesAsNumpy()
     daily_temperature_2m_min = daily.Variables(1).ValuesAsNumpy()
     daily_temperature_2m_mean = daily.Variables(2).ValuesAsNumpy()
     daily_rain_sum = daily.Variables(3).ValuesAsNumpy()
-    daily_wind_speed_10m_max = daily.Variables(4).ValuesAsNumpy()
-    daily_shortwave_radiation_sum = daily.Variables(5).ValuesAsNumpy()
-
-    # Creamos un diccionario con los datos
+    daily_precipitation_hours = daily.Variables(4).ValuesAsNumpy()
+    daily_wind_speed_10m_max = daily.Variables(5).ValuesAsNumpy()
+    daily_shortwave_radiation_sum = daily.Variables(6).ValuesAsNumpy()
     daily_data = {"date": pd.date_range(
 	start = pd.to_datetime(daily.Time(), unit = "s", utc = True),
 	end = pd.to_datetime(daily.TimeEnd(), unit = "s", utc = True),
@@ -38,6 +38,7 @@ def lambda_handler(event, context):
     daily_data["temperature_2m_min"] = daily_temperature_2m_min
     daily_data["temperature_2m_mean"] = daily_temperature_2m_mean
     daily_data["rain_sum"] = daily_rain_sum
+    daily_data["precipitation_hours"] = daily_precipitation_hours
     daily_data["wind_speed_10m_max"] = daily_wind_speed_10m_max
     daily_data["shortwave_radiation_sum"] = daily_shortwave_radiation_sum
 
@@ -53,6 +54,6 @@ def lambda_handler(event, context):
     s3.put_object(Bucket=bucket_name, Key=file_name, Body=csv_buffer)
 
     return{
-        "statusCode": 200,
-        "body": json.dumps(f"Archivo {file_name} guardado en S3 correctamente.")
+    "statusCode": 200,
+    "body": json.dumps(f"Archivo {file_name} guardado en S3 correctamente.")
     }
