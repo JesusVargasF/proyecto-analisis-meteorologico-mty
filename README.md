@@ -55,7 +55,7 @@ Datos procesados (Se renombraron al descargarse):
   - Implementé un **AWS Glue Job** para realizar las siguientes transformaciones en los datos:
     - Cambiar el tipo de dato de la columna de fecha a `DATE`.
     - Convertir las columnas numéricas (como temperatura, precipitación, etc.) a tipos de datos adecuados (`FLOAT`).
-    - Agregar un campo `id` único para cada registro, facilitando la identificación.
+    - Agregar un campo `id` único para cada registro.
 
 **Visual ETL Job:**
 
@@ -63,7 +63,7 @@ Datos procesados (Se renombraron al descargarse):
 
 ### 3️⃣ Análisis Exploratorio y Modelado en Google Colab
 
-Una vez completado el proceso ETL en AWS, realicé el análisis exploratorio y el desarrollo de un modelo de Machine Learning para evaluar la relación entre las variables climáticas.
+Una vez completado el proceso ETL en AWS, realicé el análisis exploratorio y el desarrollo de un modelo de Machine Learning para encontrar la relación entre las variables climáticas.
 
 - **Descarga de Datos Transformados**:
   - Descargué los datos transformados desde el bucket de **Amazon S3** y los cargué en **Google Colab** para su análisis.
