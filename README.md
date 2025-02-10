@@ -60,7 +60,7 @@ Datos procesados (Se renombraron al descargarse):
     - Convertir las columnas numéricas (como temperatura, precipitación, etc.) a tipos de datos adecuados (`FLOAT`).
     - Agregar un campo `id` único para cada registro, facilitando la identificación.
 
-Visual ETL Job:
+**Visual ETL Job:**
 
 ![image](https://github.com/user-attachments/assets/8f92135f-94fb-4b4c-a353-70efb4d71d3f)
 
