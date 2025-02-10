@@ -79,7 +79,7 @@ Una vez completado el proceso ETL en AWS, realicé el análisis exploratorio y e
   - El modelo permitió identificar patrones y tendencias significativas entre estas variables, proporcionando resultados sobre cómo la radiación solar afecta las temperaturas.
 
 - **Resultados y Visualizaciones**:
-  - **Todos los gráficos generados, así como los resultados del modelo de Machine Learning, están disponibles en el notebook en el repositorio.**
+  - **Todos los gráficos creados, así como los resultados del modelo de Machine Learning, están disponibles en el notebook en el repositorio.**
     
     ![image](https://github.com/user-attachments/assets/77e32d8e-3be4-43b7-a81e-d4e0c1dada99)
 
