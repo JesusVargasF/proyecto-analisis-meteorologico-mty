@@ -1,4 +1,5 @@
 # **ANÁLISIS Y MODELO DE MACHINE LEARNING PARA DATOS METEOROLÓGICOS DE MONTERREY, NUEVO LEÓN, MÉXICO**
+![image](https://github.com/user-attachments/assets/daf12ebd-0454-4c24-b8cc-c7e1cffb6e65)
 
 ## 📌 Objetivo del Proyecto
 
